@@ -3,6 +3,7 @@ package com.avaloq.service;
 import com.avaloq.dao.DiceRollDao;
 import com.avaloq.dto.DiceRollDTO;
 import com.avaloq.dto.DiceRollRequestDTO;
+import com.avaloq.dto.DiceSummaryDTO;
 import com.avaloq.model.Dice;
 import com.avaloq.model.DiceRoll;
 import com.avaloq.model.DiceRollDetails;
@@ -43,5 +44,13 @@ public class DiceService {
             diceRollDetails.setRolledSum(sum);
             diceRoll.addDiceRollDetails(diceRollDetails);
         }
+    }
+
+    public List<DiceSummaryDTO> getDiceRollSummary(){
+        return diceRollDao.getDiceRollSummary();
+    }
+
+    public List<Double[]> getDiceDistribution(final int numberOfDice, final int numberOfFaces){
+        return diceRollDao.getDiceDistribution(numberOfDice, numberOfFaces);
     }
 }
