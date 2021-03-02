@@ -33,6 +33,7 @@ public class DiceController {
     @GetMapping("/get-roll-distribution")
     public List<Double[]> getDiceDistribution(@RequestParam(name = "numberOfDice") int numberOfDice,
                                               @RequestParam(name = "numberOfFaces") int numberOfFaces) {
+
         return diceService.getDiceDistribution(numberOfDice, numberOfFaces);
     }
 
